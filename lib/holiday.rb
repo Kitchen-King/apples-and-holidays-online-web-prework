@@ -62,12 +62,17 @@ def all_supplies_in_holidays(holiday_hash)
   #   Fourth Of July: Fireworks, BBQ
   # etc.
 
-i = 0
-while i < holidays.keys.length do
-  puts "#{holidays.keys[i].capitalize}:"
-  i = i + 1
-end
-
+  hh = holiday_hash
+  
+  hh.each do |season, holidays|
+    print "#{season.capitalize}:"
+    holidays.each do |holiday, supplies| 
+      print "#{holiday.capitalize}: #{supplies.join(", ")}"
+      
+     binding.pry
+      
+    end
+  end
 end
 
 def all_holidays_with_bbq(holiday_hash)
